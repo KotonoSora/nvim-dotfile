@@ -38,7 +38,7 @@ let g:node_host_prog = 'C:\Users\koton\scoop\persist\nodejs-lts\bin\node_modules
 :lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = {  },
+  ensure_installed = { "javascript", "html", "css", "scss", "typescript", "tsx" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
