@@ -1,3 +1,4 @@
 *
 !.gitignore
 !init.vim
+!npm_install.ps1
