@@ -19,11 +19,9 @@ set expandtab
 set relativenumber
 set shell=pwsh
 
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn="80,".join(range(120,999),",")
-
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -32,10 +30,11 @@ call plug#end()
 let g:lsp_log_verbose = 0
 
 let g:loaded_python_provider = 0
+let g:loaded_python3_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
 
-let g:python3_host_prog = 'C:\Users\koton\scoop\apps\python\current\python.exe'
+" let g:python3_host_prog = ''
 let g:node_host_prog = 'C:\Users\koton\scoop\persist\nodejs-lts\bin\node_modules\neovim\bin\cli.js'
 
 " Config nvim-lspconfig
@@ -80,9 +79,13 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+-- nvim lsp installer
+require("nvim-lsp-installer").setup {
+  automatic_installation = true
+}
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'tailwindcss' }
+local servers = { 'tsserver', 'cssls', 'grammarly', 'jsonls', 'intelephense', 'angularls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
