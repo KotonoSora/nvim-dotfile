@@ -21,6 +21,8 @@ set shell=pwsh
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -36,6 +38,14 @@ let g:loaded_perl_provider = 0
 
 " let g:python3_host_prog = ''
 let g:node_host_prog = 'C:\Users\koton\scoop\persist\nodejs-lts\bin\node_modules\neovim\bin\cli.js'
+
+" Config the NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+
 
 " Config nvim-lspconfig
 :lua <<EOF
@@ -85,7 +95,7 @@ require("nvim-lsp-installer").setup {
 }
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'cssls', 'grammarly', 'jsonls', 'intelephense', 'angularls' }
+local servers = { 'tsserver', 'cssls', 'grammarly', 'jsonls', 'intelephense', 'angularls', 'kotlin_language_server' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
