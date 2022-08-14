@@ -14,7 +14,7 @@ local list = {
 	{ key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
 	{ key = "h", cb = tree_cb "close_node" },
 	{ key = "v", cb = tree_cb "vsplit" },
-	{ key = "x", cb = tree_cb "split" },
+  	{ key = "x", cb = tree_cb "split" },
 }
 
 nvim_tree.setup {
