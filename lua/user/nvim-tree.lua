@@ -11,23 +11,28 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local list = {
-	{ key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
 	{ key = "h", cb = tree_cb "close_node" },
 	{ key = "v", cb = tree_cb "vsplit" },
-  	{ key = "x", cb = tree_cb "split" },
+	{ key = "x", cb = tree_cb "split" },
 }
 
 nvim_tree.setup {
+	open_on_setup = true,
 	update_focused_file = {
-		enable = true,
-		update_cwd = true,
+		enable = false,
+		update_cwd = false,
 	},
 	view = {
 		width = 30,
-		height = 30,
 		side = "left",
 		mappings = {
 			list = list
 		},
 	},
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = false,
+  },
 }

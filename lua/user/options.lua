@@ -8,14 +8,14 @@ vim.opt.hlsearch = true                         -- highlight all matches on prev
 vim.opt.ignorecase = true                       -- ignore case in search patterns
 vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
 vim.opt.pumheight = 10                          -- pop up menu height
-vim.opt.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
-vim.opt.showtabline = 0                         -- always show tabs
+vim.opt.showmode = true                         -- we don't need to see things like -- INSERT -- anymore
+vim.opt.showtabline = 1                         -- always show tabs
 vim.opt.smartcase = true                        -- smart case
 vim.opt.smartindent = true                      -- make indenting smarter again
 vim.opt.splitbelow = true                       -- force all horizontal splits to go below current window
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.swapfile = false                        -- creates a swapfile
-vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
+vim.opt.termguicolors = false                    -- set term gui colors (most terminals support this)
 vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
@@ -25,6 +25,7 @@ vim.opt.shiftwidth = 2                          -- the number of spaces inserted
 vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
+vim.opt.relativenumber = true
 vim.opt.laststatus = 3
 vim.opt.showcmd = false
 vim.opt.ruler = false
@@ -40,9 +41,13 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.background = "dark"
 vim.opt.shell = "bash"
-vim.g.mapleader = ","
 vim.cmd [[
-  syntax off
-  filetype off
-  filetype plugin indent off
+  syntax on
+  filetype on
+  filetype plugin indent on
+
+  let g:loaded_python3_provider = 0
+  let g:loaded_ruby_provider = 0
+  let g:loaded_node_provider = 0
+  let g:loaded_perl_provider = 0
 ]]
