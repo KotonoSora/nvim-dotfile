@@ -5,13 +5,19 @@ end
 
 configs.setup({
 	ensure_installed = "all", -- one of "all" or a list of languages
-	ignore_install = { "dart" }, -- List of parsers to ignore installing
+  sync_install = false,
+  auto_install = true,
+	ignore_install = {  }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "css" }, -- list of language that will be disabled
+		disable = {  }, -- list of language that will be disabled
+    additional_vim_regex_highlighting = false,
 	},
 	autopairs = {
 		enable = true,
 	},
-	indent = { enable = true, disable = { "python", "css", "dart" } },
+	indent = {
+    enable = true,
+    disable = {  }
+  },
 })
