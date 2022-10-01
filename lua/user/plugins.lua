@@ -20,6 +20,7 @@ return require('packer').startup({function(use)
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-treesitter/nvim-treesitter'
+  use 'neovim/nvim-lspconfig'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
