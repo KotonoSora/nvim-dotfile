@@ -23,7 +23,7 @@ nvim_tree.setup {
 		update_cwd = false,
 	},
 	view = {
-		width = 30,
+		width = 20,
 		side = "left",
 		mappings = {
 			list = list
