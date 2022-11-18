@@ -1,11 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local servers = {
-  "tsserver",                                   -- Javascript
-  "dartls",                                     -- Flutter
-  "sumneko_lua",                                -- Lua
-  "intelephense",                               -- PHP
-  "kotlin_language_server",                     -- Kotlin
+  "sumneko_lua", -- Lua
 }
 
 local opts = {}
@@ -22,3 +18,4 @@ for _, server in pairs(servers) do
 
   lspconfig[server].setup(opts)
 end
+
