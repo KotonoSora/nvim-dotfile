@@ -1,6 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local servers = {
+  "tsserver", -- Javascript
   "sumneko_lua", -- Lua
 }
 
@@ -18,4 +19,3 @@ for _, server in pairs(servers) do
 
   lspconfig[server].setup(opts)
 end
-

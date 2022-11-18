@@ -4,7 +4,18 @@ if not status_ok then
 end
 
 local ensure_installed = {
-  "lua"
+  "css",
+  "html",
+  "javascript",
+  "jsdoc",
+  "json",
+  "lua",
+  "markdown",
+  "regex",
+  "scss",
+  "tsx",
+  "typescript",
+  "vim",
 }
 
 configs.setup({
