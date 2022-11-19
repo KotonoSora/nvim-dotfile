@@ -23,6 +23,9 @@
 | Leader                       | `,`         | Normal |
 | Stop the highlighting search | `<leader>h` | Normal |
 | Escape                       | `jk`        | Normal |
+| Navigate buffers next        | `<S-l>`     | Normal |
+| Navigate buffers previous    | `<S-h>`     | Normal |
+| Close buffers                | `<S-q>`     | Normal |
 
 ## Shortcuts Nvim tree
 
