@@ -3,6 +3,7 @@ local lspconfig = require("lspconfig")
 local servers = {
   "tsserver", -- Javascript
   "sumneko_lua", -- Lua
+  "dartls", -- Lua
 }
 
 local opts = {}

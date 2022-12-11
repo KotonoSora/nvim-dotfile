@@ -2,19 +2,51 @@
 
 ## Pre-requires
 
-- neovim
-- gcc
-- tree-sitter
-- git
-- nodejs
+- [neovim](https://formulae.brew.sh/formula/neovim)
+- [gcc](https://formulae.brew.sh/formula/gcc)
+- [tree-sitter](https://formulae.brew.sh/formula/tree-sitter)
+- [git](https://formulae.brew.sh/formula/git)
+- [nodejs](https://formulae.brew.sh/formula/node)
+- [flutter](https://docs.flutter.dev/get-started/install/macos#downloading-straight-from-github-instead-of-using-an-archive)
 
-## Pre-config LSP
+## Setup lsp (optional)
 
-1. Setup lsp
-   - [tsserver](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver)
-   - [sumneko_lua](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua)
-   - [intelephense](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#intelephense)
-   - [kotlin_language_server](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#kotlin_language_server)
+- [tsserver](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver)
+- [sumneko_lua](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua)
+- [intelephense](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#intelephense)
+- [kotlin_language_server](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#kotlin_language_server)
+- [dartls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dartls)
+
+See also `:help lsp-config`
+
+Run `:LspInfo` to see the status or to troubleshoot.
+
+See more server configures [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+
+## Setup treesitter (optional)
+
+- bash
+- css
+- dart
+- html
+- gitignore
+- javascript
+- jsdoc
+- json
+- lua
+- markdown
+- regex
+- scss
+- tsx
+- typescript
+- vim
+- yaml
+
+Check `:h nvim-treesitter-commands` for a list of all available commands
+
+Installed parsers are updated to the latest version via `:TSUpdate`
+
+See more support languages [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages)
 
 ## Shortcuts Default
 

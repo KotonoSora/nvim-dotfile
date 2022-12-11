@@ -4,8 +4,11 @@ if not status_ok then
 end
 
 local ensure_installed = {
+  "bash",
   "css",
+  "dart",
   "html",
+  "gitignore",
   "javascript",
   "jsdoc",
   "json",
@@ -16,6 +19,7 @@ local ensure_installed = {
   "tsx",
   "typescript",
   "vim",
+  "yaml",
 }
 
 configs.setup({

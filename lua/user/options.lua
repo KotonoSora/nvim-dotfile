@@ -40,7 +40,7 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.background = "dark"
-vim.opt.shell = "bash"
+vim.opt.shell = "zsh"
 vim.cmd [[
   syntax on
   filetype on
