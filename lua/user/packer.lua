@@ -17,14 +17,17 @@ return require('packer').startup({ function(use)
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'kyazdani42/nvim-tree.lua'
-  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-tree/nvim-tree.lua'
+  use 'nvim-tree/nvim-web-devicons'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   use 'neovim/nvim-lspconfig'
   -- use 'udalov/kotlin-vim'
+  use "lunarvim/darkplus.nvim"
+  use 'romgrk/barbar.nvim'
+  use 'nvim-lualine/lualine.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -36,4 +39,5 @@ end,
     display = {
       open_fn = require('packer.util').float,
     }
-  } })
+  } 
+})
