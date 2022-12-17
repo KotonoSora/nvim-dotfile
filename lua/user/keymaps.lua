@@ -17,14 +17,14 @@ vim.g.mapleader = ","
 
 -- Normal --
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", "<Cmd>BufferNext<CR>", opts)
+keymap("n", "<S-h>", "<Cmd>BufferPrevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
+keymap("n", "<S-q>", "<Cmd>BufferWipeout<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter

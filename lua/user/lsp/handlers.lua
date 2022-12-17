@@ -12,7 +12,7 @@ M.setup = function()
   vim.lsp.set_log_level("error")
 end
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -37,4 +37,3 @@ M.on_attach = function(client, bufnr)
 end
 
 return M
-
