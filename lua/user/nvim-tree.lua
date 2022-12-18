@@ -35,6 +35,10 @@ nvim_tree.setup {
   filters = {
     dotfiles = false,
   },
+  git = {
+    enable = true,
+    ignore = false,
+  },
 }
 
 local nvim_tree_events = require('nvim-tree.events')
@@ -55,4 +59,3 @@ end)
 nvim_tree_events.subscribe('TreeClose', function()
   bufferline_api.set_offset(0)
 end)
-
