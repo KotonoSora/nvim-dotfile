@@ -21,13 +21,20 @@ return require('packer').startup({ function(use)
   use 'nvim-tree/nvim-web-devicons'
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
   use 'neovim/nvim-lspconfig'
   -- use 'udalov/kotlin-vim'
   use "lunarvim/darkplus.nvim"
   use 'romgrk/barbar.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
