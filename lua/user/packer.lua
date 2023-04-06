@@ -27,13 +27,12 @@ return require('packer').startup({ function(use)
     end,
   }
   use 'neovim/nvim-lspconfig'
-  -- use 'udalov/kotlin-vim'
   use "lunarvim/darkplus.nvim"
   use 'romgrk/barbar.nvim'
   use 'nvim-lualine/lualine.nvim'
   use {
     'lewis6991/gitsigns.nvim',
-    tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+     tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
@@ -46,5 +45,13 @@ end,
     display = {
       open_fn = require('packer.util').float,
     }
+  },
+  init = {
+    git = {
+     clone_timeout = 300, -- 5 mins
+     subcommands = {
+       update = 'pull --ff-only --progress --rebase=false --force'
+     }
+   }
   }
 })
