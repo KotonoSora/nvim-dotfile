@@ -30,10 +30,7 @@ return require('packer').startup({ function(use)
   use "lunarvim/darkplus.nvim"
   use 'romgrk/barbar.nvim'
   use 'nvim-lualine/lualine.nvim'
-  use {
-    'lewis6991/gitsigns.nvim',
-     tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-  }
+  use 'lewis6991/gitsigns.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

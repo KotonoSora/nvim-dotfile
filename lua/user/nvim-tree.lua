@@ -3,18 +3,19 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
+local function on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory");
+  vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split");
+  vim.keymap.set("n", "x", api.node.open.horizontal, opts "Open: Horizontal Split");
 end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
-local list = {
-  { key = "h", cb = tree_cb "close_node" },
-  { key = "v", cb = tree_cb "vsplit" },
-  { key = "x", cb = tree_cb "split" },
-}
 
 nvim_tree.setup {
   update_focused_file = {
@@ -24,9 +25,6 @@ nvim_tree.setup {
   view = {
     width = 40,
     side = "left",
-    mappings = {
-      list = list
-    },
   },
   renderer = {
     group_empty = true,
@@ -38,6 +36,7 @@ nvim_tree.setup {
     enable = true,
     ignore = false,
   },
+  on_attach = on_attach,
 }
 
 local nvim_tree_events = require('nvim-tree.events')
@@ -60,7 +59,6 @@ nvim_tree_events.subscribe('TreeClose', function()
 end)
 
 local function open_nvim_tree(data)
-
   -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1
 

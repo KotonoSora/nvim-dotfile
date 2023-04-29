@@ -1,6 +1,7 @@
-local colorscheme = "darkplus"
-
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+local status_ok, configs = pcall(require, "darkplus")
 if not status_ok then
   return
 end
+
+configs.setup()
+vim.cmd("colorscheme darkplus");
